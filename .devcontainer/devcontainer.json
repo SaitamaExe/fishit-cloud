@@ -1,0 +1,29 @@
+{
+  "name": "Cloud Desktop",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "false",
+      "configureZshAsDefaultShell": "false",
+      "upgradePackages": "true"
+    }
+  },
+
+  "forwardPorts": [6080],
+
+  "portsAttributes": {
+    "6080": {
+      "label": "Cloud Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "postCreateCommand": "bash install.sh",
+
+  "remoteUser": "vscode",
+
+  "containerEnv": {
+    "DISPLAY": ":1"
+  }
+}
